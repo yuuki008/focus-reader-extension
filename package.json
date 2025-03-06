@@ -1,0 +1,30 @@
+{
+  "name": "focus-reader-extension",
+  "version": "1.0.0",
+  "description": "クリックした要素のみをモーダルに表示し、背景を白くする Chrome 拡張機能",
+  "main": "background.js",
+  "scripts": {
+    "build": "mkdir -p dist && cp manifest.json background.js content_script.js content_style.css dist/ && cp -r icons dist/",
+    "package": "cd dist && zip -r ../extension.zip *",
+    "get-token": "node scripts/get_refresh_token.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuuki008/focus-reader-extension.git"
+  },
+  "keywords": [
+    "chrome-extension",
+    "focus",
+    "reader"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuuki008/focus-reader-extension/issues"
+  },
+  "homepage": "https://github.com/yuuki008/focus-reader-extension#readme",
+  "devDependencies": {
+    "axios": "^1.6.2",
+    "open": "^9.1.0"
+  }
+}

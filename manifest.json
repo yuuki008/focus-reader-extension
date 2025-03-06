@@ -1,7 +1,7 @@
 {
   "name": "Focus Element Reader",
   "version": "1.0",
-  "description": "This Chrome extension allows you to focus on a specific element of a webpage by displaying it in a modal while making the background white. It helps you concentrate on reading content without distractions.",
+  "description": "Display selected webpage elements in a modal with white background for distraction-free reading.",
   "manifest_version": 3,
 
   "permissions": ["contextMenus", "activeTab", "scripting"],
