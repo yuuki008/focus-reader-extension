@@ -1,0 +1,28 @@
+{
+  "name": "Focus Element Reader",
+  "version": "1.0",
+  "description": "クリックした要素のみをモーダル表示して記事に集中できるようにする拡張機能",
+  "manifest_version": 3,
+
+  "permissions": ["contextMenus", "activeTab", "scripting"],
+
+  "icons": {
+    "128": "icons/icon.svg"
+  },
+
+  "action": {
+    "default_title": "Focus Element Reader"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "css": ["content_style.css"]
+    }
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  }
+}

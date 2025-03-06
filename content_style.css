@@ -1,0 +1,106 @@
+/* content_style.css */
+/* アニメーションのキーフレーム定義 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/* オーバーレイのスタイル */
+.focus-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 9999; /* 画面の最前面に出す */
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.focus-overlay.closing {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+/* モーダル本体のスタイル */
+.focus-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  max-height: 80%;
+  max-width: 1000px;
+  overflow-y: auto;
+  z-index: 10000;
+  opacity: 0;
+  animation: scaleIn 0.3s ease forwards;
+}
+
+.focus-modal.closing {
+  animation: scaleOut 0.3s ease forwards;
+}
+
+/* 閉じるボタンのスタイル */
+.focus-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.focus-close-btn:hover {
+  background-color: #eee;
+}
+
+.focus-close-btn svg {
+  width: 20px;
+  height: 20px;
+}
