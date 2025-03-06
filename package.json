@@ -6,7 +6,8 @@
   "scripts": {
     "build": "mkdir -p dist && cp manifest.json background.js content_script.js content_style.css dist/ && cp -r icons dist/",
     "package": "cd dist && zip -r ../extension.zip *",
-    "get-token": "node scripts/get_refresh_token.js"
+    "get-token": "node scripts/get_refresh_token.js",
+    "deploy": "node scripts/deploy_to_chrome_store.js"
   },
   "repository": {
     "type": "git",
